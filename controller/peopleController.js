@@ -40,7 +40,6 @@ export const addPerson = async (req, res) => {
       alternateEmail
     });
 
-    // ✅ send success response
     return res.status(201).json({
       success: true,
       msg: "Person added successfully",
@@ -51,7 +50,7 @@ export const addPerson = async (req, res) => {
     console.error("Error adding person:", error);
     res.status(500).json({
       success: false,
-      msg: "Server error"
+      msg: error
     });
   }
 };
